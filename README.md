@@ -120,9 +120,7 @@ in this example to train on.
 5. In ```./jobs```, copy the *.config, which you create from the template configs from the pretrained models. A guide how to configure the network can be found here: https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html
 Do not forget to change the paths to the fine tune checkpoint, e.g. 
 ```fine_tune_checkpoint: "pre-trained-models/ssd_mobilenet_v2_320x320_coco17_tpu-8/checkpoint/ckpt-0"```
-
 and to the dataset 
-
 ```
 train_input_reader: {
   label_map_path: "/srv/cdl-eml/datasets/dataset-oxford-pets-cleaned/annotations/label_map.pbtxt"
@@ -216,6 +214,7 @@ to the embedded target devices.
 ### Task Spooler Blocked
 If the task spooler freezes or is blocked, the following error message is shown:
 
+```
 === Init task spooler ===
 Setup task spooler socket for GPU.
 chmod: changing permissions of '/srv/ts_socket/GPU.socket': Operation not permitted
@@ -224,6 +223,7 @@ Task spooler initialized /srv/ts_socket/GPU.socket
 (tf24) [wendt@eda02 graz-pedestrian]$ ts -l
 c: cannot connect to the server
 (tf24) [wendt@eda02 graz-pedestrian]$
+```
 
 The cause is the a user blocks the task spooler and nobody else has access rights. It has to be released by the user or a sudo-user.
 The solution is to put the following command line into the task spooler script: ```chmod 777 /srv/ts_socket/GPU.socket```
