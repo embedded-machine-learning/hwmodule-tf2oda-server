@@ -1,0 +1,1 @@
+docker build -t eml_tf2oda_inference:tf2_2.7.0-gpu .

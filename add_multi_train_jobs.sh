@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Constant Definition
 USERNAME=wendt

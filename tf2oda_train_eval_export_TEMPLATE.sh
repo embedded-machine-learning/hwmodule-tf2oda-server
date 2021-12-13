@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "#==============================================#"
 echo "# CDLEML Tool TF2 Object Detection API Training"
