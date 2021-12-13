@@ -17,6 +17,7 @@ docker commit [CONTAINER ID] [NAME]:[TAG]: Commit container as new image
 ```
 
 Running scripts in the Dockerfile over the image: https://stackoverflow.com/questions/34549859/run-a-script-in-dockerfile
+
 RUN and ENTRYPOINT are two different ways to execute a script. RUN means it creates an intermediate container, runs the script and freeze the new state of that container in a new intermediate image. The script won't be run after that: your final image is supposed to reflect the result of that script. ENTRYPOINT means your image (which has not executed the script yet) will create a container, and runs that script. In both cases, the script needs to be added, and a RUN chmod +x *.sh is a good idea to pass the rights
 
 
@@ -59,6 +60,7 @@ RUN apt -y install git: Use -y to automatically always select Yes for all option
 docker build -t eml_tf2oda_inference:tf2_2.7.0-gpu .
 ```
 NAME: eml_tf2oda_inference
+
 TAG: tf2_2.7.0-gpu
 
 3. Update Image in Interactive Mode
@@ -83,11 +85,15 @@ After everything has been installed, the image can be run.
 
 1. Prepare folders to share in the container
 We need to share the dataset and the project directory with the exported network file.
+
 Dataset: C:\Projekte\21_SoC_EML\datasets\dataset-oxford-pets-val-debug. The dataset has the EML format and will be directly linked to the container at start
+
 Project: eml_projects\test-project. The project has an exported network and a customized script tf2oda_inf_eval_saved_model_tf2oda_ssdmobilenetv2_300x300_pets_D100.sh
 
 The best way of editing files in a docker container is to edit the files in a shared folder.
+
 Guide for Powershell: https://adamtheautomator.com/docker-volume-create/
+
 Guide for Linux: https://blog.softwaremill.com/editing-files-in-a-docker-container-f36d76b9613c
 
 The following parts are added to docker run
