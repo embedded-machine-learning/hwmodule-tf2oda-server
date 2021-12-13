@@ -7,12 +7,14 @@ This guide can also be found here: https://github.com/embedded-machine-learning/
 ## Commands
 Basic commands: https://www.educative.io/edpresso/what-is-the-workdir-command-in-docker
 
+```
 docker ps: Show running containers
 docker container ls: Show running containers
 docker image ls: Show all images
 docker rmi -f [IMAGEID]: Remove image with force by image id
 docker rm -f [CONTAINER ID]: Remove container with force
 docker commit [CONTAINER ID] [NAME]:[TAG]: Commit container as new image
+```
 
 Running scripts in the Dockerfile over the image: https://stackoverflow.com/questions/34549859/run-a-script-in-dockerfile
 RUN and ENTRYPOINT are two different ways to execute a script. RUN means it creates an intermediate container, runs the script and freeze the new state of that container in a new intermediate image. The script won't be run after that: your final image is supposed to reflect the result of that script. ENTRYPOINT means your image (which has not executed the script yet) will create a container, and runs that script. In both cases, the script needs to be added, and a RUN chmod +x *.sh is a good idea to pass the rights
@@ -20,8 +22,11 @@ RUN and ENTRYPOINT are two different ways to execute a script. RUN means it crea
 
 ## How to build a docker image
 CUDA and TF2 Base images: https://docs.valohai.com/howto/docker/docker-build-image/
+
 Setup container 1: https://itproguru.com/expert/2016/10/docker-create-container-change-container-save-as-new-image-and-connect-to-container/
+
 Setup container 2: https://docs.docker.com/get-started/02_our_app/
+
 Setting up an ML Docker and running it with scripts: https://towardsdatascience.com/build-and-run-a-docker-container-for-your-machine-learning-model-60209c2d7a7f
 
 
