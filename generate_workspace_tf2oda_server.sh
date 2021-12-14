@@ -70,6 +70,9 @@ if [ ! -d "$TF2ODAENV" ] ; then
   cp object_detection/packages/tf2/setup.py .
   python -m pip install .
   
+  # Upgrade numpy to 2.21 from 2.19, else there will be an error https://stackoverflow.com/questions/66060487/valueerror-numpy-ndarray-size-changed-may-indicate-binary-incompatibility-exp
+  pip install --upgrade numpy
+  
   echo # Add object detection and slim to python path
   export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
   

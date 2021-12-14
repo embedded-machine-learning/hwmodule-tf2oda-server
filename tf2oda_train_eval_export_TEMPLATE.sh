@@ -9,7 +9,7 @@ USERNAME=wendt
 USEREMAIL=alexander.wendt@tuwien.ac.at
 #MODELNAME=tf2oda_efficientdetd0_320_240_coco17_pedestrian_all_LR002
 #PYTHONENV=tf24
-#BASEPATH=`pwd`
+BASEPATH=`pwd`
 SCRIPTPREFIX=../../eml-tools
 
 
