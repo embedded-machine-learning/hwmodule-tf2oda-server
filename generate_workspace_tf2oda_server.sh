@@ -97,3 +97,4 @@ source ./venv/$TF2ODAENV/bin/activate
 
 echo Created TF2ODA environment
 
+echo create template project folder

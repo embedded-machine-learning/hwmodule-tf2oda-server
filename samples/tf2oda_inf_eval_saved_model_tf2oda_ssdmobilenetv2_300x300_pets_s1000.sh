@@ -95,7 +95,7 @@ echo #====================================#
 echo # Evaluate with Coco Metrics
 echo #====================================#
 echo coco evaluation
-python3 $SCRIPTPREFIX/inference_evaluation/objdet_pycoco_evaluation.py \
+python3 $SCRIPTPREFIX/inference_evaluation/eval_pycocotools.py \
 --groundtruth_file="$DATASET/annotations/coco_val_annotations.json" \
 --detection_file="results/$MODELNAME/$HARDWARENAME/coco_detections.json" \
 --output_file="results/performance_$HARDWARENAME.csv" \
@@ -107,7 +107,7 @@ echo #====================================#
 echo # Merge results to one result table
 echo #====================================#
 echo merge latency and evaluation metrics
-python3 $SCRIPTPREFIX/inference_evaluation/merge_results.py \
+python3 $SCRIPTPREFIX/inference_evaluation/eval_merge_results.py \
 --latency_file="results/latency_$HARDWARENAME.csv" \
 --coco_eval_file="results/performance_$HARDWARENAME.csv" \
 --output_file="results/combined_results_$HARDWARENAME.csv"
